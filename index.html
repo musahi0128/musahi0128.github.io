@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Moh. Sarip Hidayat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sour+Gummy&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: 'Sour Gummy', sans-serif;
+            background: linear-gradient(to bottom, #1A3A91, #0d1b3a);
+            color: #fff;
+            overflow: auto;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1920px;
+            margin: 0 auto;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            gap: 20px;
+            min-height: 100vh; /* Ensure container always covers full viewport height */
+            justify-content: space-around; /* Space content evenly */
+        }
+
+        .photo {
+            width: 30%; /* Dynamic width based on viewport */
+            max-width: 150px;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .social-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-buttons a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.5rem;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .social-buttons a:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .photo {
+                width: 40%; /* Adjust photo size for smaller screens */
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .photo {
+                width: 50%; /* Further reduce photo size for very small screens */
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            p {
+                font-size: 0.9rem;
+            }
+
+            .social-buttons a {
+                font-size: 1.3rem;
+                width: 45px;
+                height: 45px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="me.png" alt="Photo of Moh. Sarip Hidayat" class="photo">
+        <h1>Hei, I’m Moh. Sarip Hidayat – but you can call me Sarip!</h1>
+		<p>I&rsquo;m from Purwakarta, West Java, Indonesia, now living in Sidoarjo, East Java. I graduated from STMIK Subang in 2016. For the thesis, I developed a web app for managing IT infrastructure assets. I currently work as a Global Service Desk supporter for a multinational company, handling IT issues, user support, and Microsoft 365 administration, including Entra, Exchange Online, SharePoint, and Teams.</p>
+		<p>Outside work, I enjoy tinkering with tech and coding. As a freelance programmer for a company based in UK, I helped build an order management system using Python and JavaScript, including a revenue dashboard, production calendar, label printing integration, and other common features. This experience fueled my passion for creating reliable and efficient systems.</p>
+		<p>I value simplicity, honesty, and well-managed processes. Whether it&rsquo;s solving IT problems or building data-driven web apps, I love bringing ideas to life. My dream is to manage cloud environments like Azure or AWS&mdash;or become a full-time Python programmer, ideally from home!</p>
+		<p>Joining my current company was a turning point in my career, giving me the chance to thrive in a supportive, people-focused environment. If you need a tech problem solved or a system built, I&rsquo;m your guy. Let&rsquo;s make things work, better and simpler!</p>
+        <div class="social-buttons">
+            <a href="https://github.com/musahi0128" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://discord.gg/FEwdxfw6CV" target="_blank"><i class="fab fa-discord"></i></a>
+            <a href="https://t.me/musahi0128" target="_blank"><i class="fab fa-telegram"></i></a>
+            <a href="https://api.whatsapp.com/send?phone=6285797412375&text=Hi%2C%20I%20know%20your%20contact%20from%20your%20website%20https%3A%2F%2Fhttps%3A%2F%2Fmusahi0128.ddnsgeek.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            <a href="mailto:musahi0128@gmail.com"><i class="fas fa-envelope"></i></a>
+        </div>
+    </div>
+</body>
+</html>
