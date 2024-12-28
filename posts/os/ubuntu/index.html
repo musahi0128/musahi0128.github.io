@@ -1,21 +1,760 @@
-<!doctype html><html lang=en><head><title>Ubuntu</title>
-<meta charset=UTF-8><meta name=viewport content="width=device-width,initial-scale=1"><meta http-equiv=X-UA-Compatible content="ie=edge"><link rel=stylesheet href=/application.11c56fc35ca977f6ed9a7dfaaa7aeafcf4a80a814a93611a57e0038adaa7bfb3.css integrity="sha256-EcVvw1ypd/btmn36qnrq/PSoCoFKk2EaV+ADitqnv7M="><link rel=icon type=image/png href=/images/site/android-chrome-512x512_hu15959206232224009283.png><meta property="og:url" content="https://musahi0128.github.io/posts/os/ubuntu/"><meta property="og:site_name" content="Moh. Sarip Hidayat, S.Tr.Kom"><meta property="og:title" content="Ubuntu"><meta property="og:locale" content="en"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Ubuntu"><script data-goatcounter=https://musahi0128.goatcounter.com/count async src=//gc.zgo.at/count.js></script><script>theme=localStorage.getItem("theme-scheme")||localStorage.getItem("darkmode:color-scheme")||"light",theme=="system"&&(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?theme="dark":theme="light"),document.documentElement.setAttribute("data-theme",theme)</script></head><body class="type-posts kind-section" data-bs-spy=scroll data-bs-target=#TableOfContents data-bs-offset=80><div class="container-fluid bg-secondary wrapper"><nav class="navbar navbar-expand-xl top-navbar shadow" id=top-navbar><div class=container><button class="navbar-toggler navbar-light" id=sidebar-toggler type=button>
-<i data-feather=sidebar></i>
-</button>
-<a class=navbar-brand href=/><img src=/images/site/android-chrome-512x512_hu15959206232224009283.png id=logo alt=Logo>
-Moh. Sarip Hidayat, S.Tr.Kom</a>
-<button class="navbar-toggler navbar-light" id=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#top-nav-items aria-label=menu>
-<i data-feather=menu></i></button><div class="collapse navbar-collapse dynamic-navbar" id=top-nav-items><ul class="nav navbar-nav ms-auto"><li class=nav-item><a class=nav-link href=/#home>Home</a></li><li class=nav-item><a class=nav-link href=/#about>About</a></li><li class=nav-item><a class=nav-link href=/#skills>Skills</a></li><li class=nav-item><a class=nav-link href=/#experiences>Experiences</a></li><li class=nav-item><a class=nav-link href=/#education>Education</a></li><li class=nav-item><a class=nav-link href=/#projects>Projects</a></li><li class=nav-item><a class=nav-link href=/#accomplishments>Accomplishments</a></li><div id=top-navbar-divider></div><li class=nav-item><a class=nav-link id=blog-link href=/posts>Posts</a></li><li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href=# id=themeSelector role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false><img id=navbar-theme-icon-svg class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme"></a><div id=themeMenu class="dropdown-menu dropdown-menu-icons-only" aria-labelledby=themeSelector><a class="dropdown-item nav-link" href=# data-scheme=light><img class=theme-icon src=/icons/sun-svgrepo-com.svg width=20 alt="Light Theme">
-</a><a class="dropdown-item nav-link" href=# data-scheme=dark><img class=theme-icon src=/icons/moon-svgrepo-com.svg width=20 alt="Dark Theme">
-</a><a class="dropdown-item nav-link" href=# data-scheme=system><img class=theme-icon src=/icons/computer-svgrepo-com.svg width=20 alt="System Theme"></a></div></li></ul></div></div><img src=/images/site/android-chrome-512x512_hu15959206232224009283.png class=d-none id=main-logo alt=Logo>
-<img src=/images/site/android-chrome-512x512_hu15959206232224009283.png class=d-none id=inverted-logo alt="Inverted Logo"></nav><section class=sidebar-section id=sidebar-section><div class=sidebar-holder><div class=sidebar id=sidebar><form class=mx-auto method=get action=/search><input type=text name=keyword placeholder=Search data-search id=search-box></form><div class=sidebar-tree><ul class=tree id=tree><li id=list-heading><a href=/posts data-filter=all>Posts</a></li><div class=subtree><li><i data-feather=minus-circle></i><a class="active list-link" href=/posts/os/> Operating systems</a><ul class=active><li><i data-feather=minus-circle></i><a class="active list-link" href=/posts/os/ubuntu/> Ubuntu</a><ul class=active><li><a class=list-link href=/posts/os/ubuntu/xfce4-papirus-dracula/ title="Xfce4 + Papirus icon + Dracula theme = 🖤">Xfce4 + Papirus icon + Dracula theme = 🖤</a></li><li><a class=list-link href=/posts/os/ubuntu/vncserver_headless/ title="VNC on headless VM or container">VNC on headless VM or container</a></li><li><a class=list-link href=/posts/os/ubuntu/vncserver_wsl2/ title="VNC on WSL2">VNC on WSL2</a></li></ul></li></ul></li><li><i data-feather=plus-circle></i><a class=list-link href=/posts/solution/> Solutions</a><ul><li><i data-feather=plus-circle></i><a class=list-link href=/posts/solution/monitoring/> Monitoring</a><ul><li><a class=list-link href=/posts/solution/monitoring/zabbix-setup-script-noble-arm64/ title="Zabbix setup script for Ubuntu Noble ARM64/AArch64">Zabbix setup script for Ubuntu Noble ARM64/AArch64</a></li><li><a class=list-link href=/posts/solution/monitoring/zabbix-host-ssh/ title="Zabbix: monitor host over SSH">Zabbix: monitor host over SSH</a></li></ul></li></ul></li></div></ul></div></div></div></section><section class=content-section id=content-section><div class="content container-fluid" id=content><div class="container-fluid post-card-holder" id=post-card-holder><div class=post-card><div class=card><div class=card-head><a href=/posts/os/ubuntu/vncserver_wsl2/ class=post-card-link><img class=card-img-top src=/images/posts/tigervnc.svg alt="Hero Image"></a></div><div class=card-body><a href=/posts/os/ubuntu/vncserver_wsl2/ class=post-card-link><h5 class=card-title>VNC on WSL2</h5><p class="card-text post-summary">Sorry for the tiger eye staring at you. I find it funny so I choose to keep it that way 🤣
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Ubuntu</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.a042f2dd3efc476ed4ca880aee2b0ad9c0cbb87c6eb11bb0fcb97d62e6099988.css" integrity="sha256-oELy3T78R27UyogK7isK2cDLuHxusRuw/Ll9YuYJmYg=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/site/android-chrome-512x512_hu15959206232224009283.png" />
+
+<meta property="og:url" content="http://localhost:1313/posts/os/ubuntu/">
+  <meta property="og:site_name" content="Moh. Sarip Hidayat, S.Tr.Kom">
+  <meta property="og:title" content="Ubuntu">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="website">
+
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ubuntu">
+
+    
+     
+
+    
+
+    
+        
+            
+            
+
+            
+            
+
+            
+            
+                
+                    <script data-goatcounter="https://musahi0128.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+                    
+            
+
+            
+            
+
+            
+
+            
+
+            
+        
+    
+
+
+
+
+<script>
+      theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light';
+      if (theme == 'system') {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        } else {
+          theme = 'light';
+        }
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
+  </head>
+
+  <body class="type-posts kind-section" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/site/android-chrome-512x512_hu15959206232224009283.png" id="logo" alt="Logo">
+      Moh. Sarip Hidayat, S.Tr.Kom</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">About</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#skills">Skills</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#experiences">Experiences</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#education">Education</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projects</a>
+                </li>
+              
+            
+            
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Accomplishments</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Posts</a>
+          </li>
+        
+        
+        
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/site/android-chrome-512x512_hu15959206232224009283.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/site/android-chrome-512x512_hu15959206232224009283.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+</nav>
+
+
+
+      
+      
+  
+  
+
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/os/"> Operating systems</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/os/ubuntu/"> Ubuntu</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/os/ubuntu/xfce4-papirus-dracula/" title="Xfce4 &#43; Papirus icon &#43; Dracula theme = 🖤">Xfce4 &#43; Papirus icon &#43; Dracula theme = 🖤</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/os/ubuntu/vncserver_headless/" title="VNC on headless VM or container">VNC on headless VM or container</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/os/ubuntu/vncserver_wsl2/" title="VNC on WSL2">VNC on WSL2</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/monitoring/"> Monitoring</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/monitoring/zabbix-host-ssh/" title="Zabbix: monitor host over SSH">Zabbix: monitor host over SSH</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/monitoring/zabbix-setup-script-noble-arm64/" title="Zabbix setup script for Ubuntu Noble ARM64/AArch64">Zabbix setup script for Ubuntu Noble ARM64/AArch64</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content container-fluid" id="content">
+    <div class="container-fluid post-card-holder" id="post-card-holder">
+      
+      
+      
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/os/ubuntu/vncserver_wsl2/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/tigervnc.svg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/os/ubuntu/vncserver_wsl2/" class="post-card-link">
+        <h5 class="card-title">VNC on WSL2</h5>
+        <p class="card-text post-summary">Sorry for the tiger eye staring at you. I find it funny so I choose to keep it that way 🤣
 Windows Subsystem for Linux (WSL) lets developers run a GNU/Linux environment &ndash; including most command-line tools, utilities, and applications &ndash; directly on Windows, unmodified, without the overhead of a traditional virtual machine or dual-boot setup.1
-In my opinion, WSL is just a pre-configured Hyper-V VM or maybe a container which integrate well with Windows.</p></a><div class=tags><ul style=padding-left:0></ul></div></div><div class=card-footer><span class=float-start>Tuesday, December 10, 2024
-| 4 minutes </span><a href=/posts/os/ubuntu/vncserver_wsl2/ class="float-end btn btn-outline-info btn-sm">Read</a></div></div></div><div class=post-card><div class=card><div class=card-head><a href=/posts/os/ubuntu/vncserver_headless/ class=post-card-link><img class=card-img-top src=/images/posts/tigervnc.svg alt="Hero Image"></a></div><div class=card-body><a href=/posts/os/ubuntu/vncserver_headless/ class=post-card-link><h5 class=card-title>VNC on headless VM or container</h5><p class="card-text post-summary">Sorry for the tiger eye staring at you. I find it funny so I choose to keep it that way 🤣
+In my opinion, WSL is just a pre-configured Hyper-V VM or maybe a container which integrate well with Windows.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Tuesday, December 10, 2024
+           | 4 minutes </span>
+      <a
+      href="/posts/os/ubuntu/vncserver_wsl2/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/os/ubuntu/vncserver_headless/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/tigervnc.svg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/os/ubuntu/vncserver_headless/" class="post-card-link">
+        <h5 class="card-title">VNC on headless VM or container</h5>
+        <p class="card-text post-summary">Sorry for the tiger eye staring at you. I find it funny so I choose to keep it that way 🤣
 Headless VM or container didn&rsquo;t have any display device attached, so when you want to run a graphical application or a desktop environment, you will have to setup a virtual display. One way to do it is running a VNC server.
-VNC stands for Virtual Network Computing, a graphical desktop-sharing system that uses the Remote Frame Buffer protocol (RFB) to remotely control another computer. It transmits the keyboard and mouse input from one computer to another, relaying the graphical-screen updates, over a network. Read more here.</p></a><div class=tags><ul style=padding-left:0></ul></div></div><div class=card-footer><span class=float-start>Monday, December 9, 2024
-| 3 minutes </span><a href=/posts/os/ubuntu/vncserver_headless/ class="float-end btn btn-outline-info btn-sm">Read</a></div></div></div><div class=post-card><div class=card><div class=card-head><a href=/posts/os/ubuntu/xfce4-papirus-dracula/ class=post-card-link><img class=card-img-top src=/images/posts/tvnviewer_I1l5tQfGOa.png alt="Hero Image"></a></div><div class=card-body><a href=/posts/os/ubuntu/xfce4-papirus-dracula/ class=post-card-link><h5 class=card-title>Xfce4 + Papirus icon + Dracula theme = 🖤</h5><p class="card-text post-summary">I love tinkering with desktop environment in Ubuntu. I installed LXD on my Oracle Cloud Infrastructure A1 instance just to play around with all the available desktop environment. But none of them beat the combination of xfce4, Papirus icon theme and Dracula theme. It is lightweight and pleasant to look at.
-Setting up Wanna steal the look? here&rsquo;s how to configure it on a freshly installed Ubuntu 24.04.1 LTS.</p></a><div class=tags><ul style=padding-left:0></ul></div></div><div class=card-footer><span class=float-start>Sunday, December 8, 2024
-| 2 minutes </span><a href=/posts/os/ubuntu/xfce4-papirus-dracula/ class="float-end btn btn-outline-info btn-sm">Read</a></div></div></div></div><div class=paginator></div></div></section></div><footer id=footer class="container-fluid text-center align-content-center footer pb-2"><div class="container pt-5"><div class="row text-start"><div class="col-md-4 col-sm-12"><h5>Navigation</h5><ul><li class=nav-item><a class=smooth-scroll href=https://musahi0128.github.io/#about>About</a></li><li class=nav-item><a class=smooth-scroll href=https://musahi0128.github.io/#skills>Skills</a></li><li class=nav-item><a class=smooth-scroll href=https://musahi0128.github.io/#experiences>Experiences</a></li><li class=nav-item><a class=smooth-scroll href=https://musahi0128.github.io/#education>Education</a></li><li class=nav-item><a class=smooth-scroll href=https://musahi0128.github.io/#projects>Projects</a></li><li class=nav-item><a class=smooth-scroll href=https://musahi0128.github.io/#accomplishments>Accomplishments</a></li></ul></div><div class="col-md-4 col-sm-12"><h5>Let's talk!</h5><ul><li><a href=mailto:musahi0128@gmail.com target=_blank rel=noopener><span><i class="fas fa-envelope"></i></span> <span>musahi0128@gmail.com</span></a></li><li><a href=https://github.com/musahi0128 target=_blank rel=noopener><span><i class="fab fa-github"></i></span> <span>musahi0128</span></a></li><li><a href=https://www.linkedin.com/in/musahi0128 target=_blank rel=noopener><span><i class="fab fa-linkedin"></i></span> <span>Moh. Sarip Hidayat, S.Tr.Kom</span></a></li><li><a href=https://wa.me/6285797412375 target=_blank rel=noopener><span><i class="fab fa-fab fa-whatsapp"></i></span> <span>+6285797412375</span></a></li><li><a href=https://t.me/musahi0128 target=_blank rel=noopener><span><i class="fab fa-fab fa-telegram"></i></span> <span>musahi0128</span></a></li></ul></div></div></div><hr><div class=container><div class="row text-start"><div class=col-md-4><a id=theme href=https://github.com/hugo-toha/toha target=_blank rel=noopener><img src=/images/theme-logo_hu16779671404603505019.png alt="Toha Theme Logo">
-Toha</a></div><div class="col-md-4 text-center">© 2024 Moh. Sarip Hidayat, S.Tr.Kom</div><div class="col-md-4 text-end"><a id=hugo href=https://gohugo.io/ target=_blank rel=noopener>Powered by
-<img src=/images/hugo-logo.svg alt="Hugo Logo" height=18></a></div></div></div></footer><script src=/application.3d9a715e9cf04194bfed4e625c1c4f396fb2324b517a8d049a00b8df071b3350.js integrity="sha256-PZpxXpzwQZS/7U5iXBxPOW+yMktReo0EmgC43wcbM1A=" defer></script></body></html>
+VNC stands for Virtual Network Computing, a graphical desktop-sharing system that uses the Remote Frame Buffer protocol (RFB) to remotely control another computer. It transmits the keyboard and mouse input from one computer to another, relaying the graphical-screen updates, over a network. Read more here.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Monday, December 9, 2024
+           | 3 minutes </span>
+      <a
+      href="/posts/os/ubuntu/vncserver_headless/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/os/ubuntu/xfce4-papirus-dracula/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/tvnviewer_I1l5tQfGOa.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/os/ubuntu/xfce4-papirus-dracula/" class="post-card-link">
+        <h5 class="card-title">Xfce4 &#43; Papirus icon &#43; Dracula theme = 🖤</h5>
+        <p class="card-text post-summary">I love tinkering with desktop environment in Ubuntu. I installed LXD on my Oracle Cloud Infrastructure A1 instance just to play around with all the available desktop environment. But none of them beat the combination of xfce4, Papirus icon theme and Dracula theme. It is lightweight and pleasant to look at.
+Setting up Wanna steal the look? here&rsquo;s how to configure it on a freshly installed Ubuntu 24.04.1 LTS.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Sunday, December 8, 2024
+           | 2 minutes </span>
+      <a
+      href="/posts/os/ubuntu/xfce4-papirus-dracula/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+    </div>
+    <div class="paginator">
+      
+    </div>
+  </div>
+</section>
+
+
+      
+       
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+    
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">About</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#skills">Skills</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#experiences">Experiences</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#education">Education</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projects</a>
+                </li>
+              
+              
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Accomplishments</a>
+                </li>
+              
+              
+            
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Let&#39;s talk!</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:musahi0128@gmail.com target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>musahi0128@gmail.com</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/musahi0128 target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>musahi0128</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/musahi0128 target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Moh. Sarip Hidayat, S.Tr.Kom</span>
+                </a></li>
+              
+            
+              
+                <li>
+                  
+                  <a href=https://wa.me/6285797412375 target="_blank" rel="noopener">
+                    <span><i class=fab&#32;fa-fab&#32;fa-whatsapp></i></span> <span>&#43;6285797412375</span>
+                  </a>
+                  
+                </li>
+              
+            
+              
+                <li>
+                  
+                  <a href=https://t.me/musahi0128 target="_blank" rel="noopener">
+                    <span><i class=fab&#32;fa-fab&#32;fa-telegram></i></span> <span>musahi0128</span>
+                  </a>
+                  
+                </li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-start">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hugo-toha/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu16779671404603505019.png" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2024 Moh. Sarip Hidayat, S.Tr.Kom</div>
+        <div class="col-md-4 text-end">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script src="/application.a301f9928083d4c2adfde9322c5ef4145d1a698e9333d5adc0626554b54fc4b9.js" integrity="sha256-owH5koCD1MKt/ekyLF70FF0aaY6TM9WtwGJlVLVPxLk=" defer></script>
+
+
+    
+     
+
+    
+    
+
+</body>
+</html>

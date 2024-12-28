@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Zabbix setup script for Ubuntu Noble ARM64/AArch64</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.a042f2dd3efc476ed4ca880aee2b0ad9c0cbb87c6eb11bb0fcb97d62e6099988.css" integrity="sha256-oELy3T78R27UyogK7isK2cDLuHxusRuw/Ll9YuYJmYg=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/site/android-chrome-512x512_hu15959206232224009283.png" />
+
+<meta property="og:url" content="http://localhost:1313/posts/monitoring/zabbix-setup-script-noble-arm64/">
+  <meta property="og:site_name" content="Moh. Sarip Hidayat, S.Tr.Kom">
+  <meta property="og:title" content="Zabbix setup script for Ubuntu Noble ARM64/AArch64">
+  <meta property="og:description" content="Script to Setup Zabbix Server, Frontend and Agent on Ubuntu Noble with ARM64/AArch64 processor">
+  <meta property="og:locale" content="en">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-12-11T16:37:00+07:00">
+    <meta property="article:modified_time" content="2024-12-11T16:37:00+07:00">
+
+    
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Zabbix setup script for Ubuntu Noble ARM64/AArch64">
+  <meta name="twitter:description" content="Script to Setup Zabbix Server, Frontend and Agent on Ubuntu Noble with ARM64/AArch64 processor">
+
+    
+    
+<meta name="description" content="Script to Setup Zabbix Server, Frontend and Agent on Ubuntu Noble with ARM64/AArch64 processor" />
+
+
+
+    
+
+    
+        
+            
+            
+
+            
+            
+
+            
+            
+                
+                    <script data-goatcounter="https://musahi0128.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+                    
+            
+
+            
+            
+
+            
+
+            
+
+            
+        
+    
+
+
+
+
+<script>
+      theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light';
+      if (theme == 'system') {
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          theme = 'dark';
+        } else {
+          theme = 'light';
+        }
+      }
+      document.documentElement.setAttribute('data-theme', theme);
+    </script>
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/site/android-chrome-512x512_hu15959206232224009283.png" id="logo" alt="Logo">
+      Moh. Sarip Hidayat, S.Tr.Kom</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">About</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#skills">Skills</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#experiences">Experiences</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#education">Education</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projects</a>
+                </li>
+              
+            
+            
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Accomplishments</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Posts</a>
+          </li>
+        
+        
+        
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/site/android-chrome-512x512_hu15959206232224009283.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/site/android-chrome-512x512_hu15959206232224009283.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/os/"> Operating systems</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/os/ubuntu/"> Ubuntu</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/os/ubuntu/xfce4-papirus-dracula/" title="Xfce4 &#43; Papirus icon &#43; Dracula theme = 🖤">Xfce4 &#43; Papirus icon &#43; Dracula theme = 🖤</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/os/ubuntu/vncserver_headless/" title="VNC on headless VM or container">VNC on headless VM or container</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/os/ubuntu/vncserver_wsl2/" title="VNC on WSL2">VNC on WSL2</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/monitoring/"> Monitoring</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/monitoring/zabbix-host-ssh/" title="Zabbix: monitor host over SSH">Zabbix: monitor host over SSH</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/monitoring/zabbix-setup-script-noble-arm64/" title="Zabbix setup script for Ubuntu Noble ARM64/AArch64">Zabbix setup script for Ubuntu Noble ARM64/AArch64</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/zabbix-hero.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author/musahi0128_hu11034217487868332195.jpg' alt="Author Image">
+          <h5 class="author-name">Moh. Sarip Hidayat, S.Tr.Kom</h5>
+          <p class="text-muted">Wednesday, December 11, 2024 | 2 minutes</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Zabbix setup script for Ubuntu Noble ARM64/AArch64</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <p>From <a href="https://en.wikipedia.org/wiki/Zabbix" target="_blank" rel="noopener">Wikipedia</a>:</p>
+<blockquote>
+<p>Zabbix is an open-source software tool to monitor IT infrastructure such as networks, servers, virtual machines, and cloud services.</p>
+</blockquote>
+<p>This script automate the installation of Zabbix Server, Frontend and Agent along with its dependencies. The script was tested on an LXD container using the Ubuntu 24.04.1 image, running in a VM with the <code>VM.Standard.A1.Flex</code> shape on an Oracle Cloud Infrastructure compute instance. I believe it should work on any machine having the same OS and processor.</p>
+<h2 id="the-script">The script</h2>
+<script src="https://gist.github.com/musahi0128/7252c38afd9dbb0d29e103d05eba263b.js"></script>
+<script>document.querySelector('.gist-file').setAttribute('data-light-theme', 'dark');</script>
+<h2 id="how-to-run">How to run</h2>
+<h3 id="directly-from-github-gist">Directly from GitHub Gist</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>curl -s https://gist.githubusercontent.com/musahi0128/7252c38afd9dbb0d29e103d05eba263b/raw | sudo bash
+</span></span></code></pre></div><h3 id="manually">Manually</h3>
+<ol>
+<li>Copy the script</li>
+<li>Create a new file via <code>nano</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>nano zabbix-setup-arm64.sh
+</span></span></code></pre></div></li>
+<li>Paste the script</li>
+<li>Save (Ctrl+S) and exit <code>nano</code> (Ctrl+X)</li>
+<li>Make the file executable
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>chmod a+x zabbix-setup-arm64.sh
+</span></span></code></pre></div></li>
+<li>Execute the file with <code>sudo</code>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ./zabbix-setup-arm64.sh
+</span></span></code></pre></div></li>
+</ol>
+<h2 id="preview">Preview</h2>
+<script src="https://asciinema.org/a/694638.js" id="asciicast-694638" async="true"></script>
+<h2 id="continue-with-zabbix-setup">Continue with Zabbix setup</h2>
+<p>Once the installation completed, open the Zabbix frontend and proceed with the setup from there.
+
+
+
+
+
+<video class="video-player" id="video-156" playsinline controls>
+  <source src="/videos/zabbix-setup.mp4" type="video/mp4" />
+</video>
+</p>
+<h2 id="secure-your-installation">Secure your installation</h2>
+<h3 id="option-1-change-admin-password">Option 1: Change <code>Admin</code> password</h3>
+<ol>
+<li>Sign in as the Admin user.</li>
+<li>On the left sidebar, click on <code>User settings</code> → <code>Profile</code></li>
+<li>Under <code>User</code> tab you can click on <code>Change password</code>.</li>
+</ol>
+<h3 id="option-2-setup-a-new-super-admin-user-and-disable-admin-user">Option 2: Setup a new <code>Super admin</code> user and disable <code>Admin</code> user</h3>
+<ol>
+<li>Setup a new <code>Super admin</code> user
+<ol>
+<li>Sign in as the <code>Admin</code> user.</li>
+<li>On the left sidebar, click on <code>Users</code> → <code>Users</code>.</li>
+<li>On the right-top part of the page, click on <code>Create user</code>.</li>
+<li>Fill in all the necessary information on the <code>User</code> tab.</li>
+<li>Change to <code>Permissions</code> tab then click on <code>Select</code> button for the <code>Role</code>.</li>
+<li>Click on <code>Super admin role</code>.</li>
+<li>At the bottom part of the page, click on <code>Add</code>.</li>
+</ol>
+</li>
+<li>Disable <code>Admin</code> user
+<ol>
+<li>Sign out from <code>Admin</code> user then sign in as the newly created user.</li>
+<li>On the left sidebar, click on <code>Users</code> → <code>Users</code>.</li>
+<li>Click on <code>Admin</code> user.</li>
+<li>On the <code>User</code> tab, click on <code>Select</code> button for the <code>Groups</code>.</li>
+<li>Check the <code>Disabled</code> group then click on <code>Select</code> button.</li>
+<li>At the bottom part of the page, click on <code>Update</code>.</li>
+</ol>
+</li>
+</ol>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Share on:</strong>
+            
+            <a class="btn icon-button bg-facebook" href="https://www.facebook.com/sharer.php?u=http%3a%2f%2flocalhost%3a1313%2fposts%2fmonitoring%2fzabbix-setup-script-noble-arm64%2f" target="_blank">
+              <i class="fab fa-facebook"></i>
+            </a>
+            
+            
+                <a class="btn icon-button bg-twitter" href="https://twitter.com/share?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fmonitoring%2fzabbix-setup-script-noble-arm64%2f&text=Zabbix%20setup%20script%20for%20Ubuntu%20Noble%20ARM64%2fAArch64&via=Moh.%20Sarip%20Hidayat%2c%20S.Tr.Kom" target="_blank">
+                  <i class="fab fa-twitter"></i>
+                </a>
+            
+            
+                <a  class="btn icon-button bg-reddit" href="https://reddit.com/submit?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fmonitoring%2fzabbix-setup-script-noble-arm64%2f&title=Zabbix%20setup%20script%20for%20Ubuntu%20Noble%20ARM64%2fAArch64" target="_blank">
+                  <i class="fab fa-reddit"></i>
+                </a>
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fmonitoring%2fzabbix-setup-script-noble-arm64%2f&title=Zabbix%20setup%20script%20for%20Ubuntu%20Noble%20ARM64%2fAArch64" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+                 <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=Zabbix%20setup%20script%20for%20Ubuntu%20Noble%20ARM64%2fAArch64 http%3a%2f%2flocalhost%3a1313%2fposts%2fmonitoring%2fzabbix-setup-script-noble-arm64%2f" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Zabbix%20setup%20script%20for%20Ubuntu%20Noble%20ARM64%2fAArch64&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fmonitoring%2fzabbix-setup-script-noble-arm64%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+          
+            
+          
+          <div class="col-md-6 btn-improve-page">
+             
+               <a href="https://github.com/musahi0128/musahi0128.github.io/edit/main/content/posts/monitoring/zabbix-setup-script-noble-arm64.md" title="Improve this page" target="_blank" rel="noopener">
+            
+                <i class="fas fa-code-branch"></i>
+                Improve this page
+              </a>
+          </div>
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/monitoring/zabbix-host-ssh/" title="Zabbix: monitor host over SSH" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+        <div class="next-prev-text">Zabbix: monitor host over SSH</div>
+      </a>
+    </div>
+  
+  
+</div>
+
+      <hr />
+
+      
+      
+        
+    
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://giscus.app/client.js"
+        data-repo="musahi0128/musahi0128.github.io"
+        data-repo-id="R_kgDONQ4Feg"
+        data-category="General"
+        data-category-id="DIC_kwDONQ4Fes4ClHBK"
+        data-mapping="title"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="top"
+        data-theme="dark"
+        data-lang=""
+        crossorigin="anonymous"
+        async>
+</script>
+
+
+
+
+
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#the-script">The script</a></li>
+    <li><a href="#how-to-run">How to run</a>
+      <ul>
+        <li><a href="#directly-from-github-gist">Directly from GitHub Gist</a></li>
+        <li><a href="#manually">Manually</a></li>
+      </ul>
+    </li>
+    <li><a href="#preview">Preview</a></li>
+    <li><a href="#continue-with-zabbix-setup">Continue with Zabbix setup</a></li>
+    <li><a href="#secure-your-installation">Secure your installation</a>
+      <ul>
+        <li><a href="#option-1-change-admin-password">Option 1: Change <code>Admin</code> password</a></li>
+        <li><a href="#option-2-setup-a-new-super-admin-user-and-disable-admin-user">Option 2: Setup a new <code>Super admin</code> user and disable <code>Admin</code> user</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+    
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">About</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#skills">Skills</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#experiences">Experiences</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#education">Education</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projects</a>
+                </li>
+              
+              
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Accomplishments</a>
+                </li>
+              
+              
+            
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Let&#39;s talk!</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:musahi0128@gmail.com target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>musahi0128@gmail.com</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/musahi0128 target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>musahi0128</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/musahi0128 target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Moh. Sarip Hidayat, S.Tr.Kom</span>
+                </a></li>
+              
+            
+              
+                <li>
+                  
+                  <a href=https://wa.me/6285797412375 target="_blank" rel="noopener">
+                    <span><i class=fab&#32;fa-fab&#32;fa-whatsapp></i></span> <span>&#43;6285797412375</span>
+                  </a>
+                  
+                </li>
+              
+            
+              
+                <li>
+                  
+                  <a href=https://t.me/musahi0128 target="_blank" rel="noopener">
+                    <span><i class=fab&#32;fa-fab&#32;fa-telegram></i></span> <span>musahi0128</span>
+                  </a>
+                  
+                </li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+    <hr />
+    <div class="container">
+      <div class="row text-start">
+        <div class="col-md-4">
+          <a id="theme" href="https://github.com/hugo-toha/toha" target="_blank" rel="noopener">
+            <img src="/images/theme-logo_hu16779671404603505019.png" alt="Toha Theme Logo">
+            Toha
+          </a>
+        </div>
+        <div class="col-md-4 text-center">© 2024 Moh. Sarip Hidayat, S.Tr.Kom</div>
+        <div class="col-md-4 text-end">
+          <a id="hugo" href="https://gohugo.io/" target="_blank" rel="noopener">Powered by
+          <img
+            src="/images/hugo-logo.svg"
+            alt="Hugo Logo"
+            height="18"
+          />
+          </a>
+        </div>
+      </div>
+    </div>
+    
+  </footer>
+
+
+    <script src="/application.a301f9928083d4c2adfde9322c5ef4145d1a698e9333d5adc0626554b54fc4b9.js" integrity="sha256-owH5koCD1MKt/ekyLF70FF0aaY6TM9WtwGJlVLVPxLk=" defer></script>
+
+
+    
+     
+
+    
+    
+
+</body>
+</html>
