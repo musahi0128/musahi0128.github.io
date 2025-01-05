@@ -1,72 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on Moh. Sarip Hidayat, S.Tr.Kom</title>
-    <link>http://localhost:1313/posts/</link>
-    <description>Recent content in Posts on Moh. Sarip Hidayat, S.Tr.Kom</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 13 Dec 2024 22:37:00 +0700</lastBuildDate><atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" /><item>
-      <title>Zabbix: monitor host over SSH</title>
-      <link>http://localhost:1313/posts/monitoring/zabbix-host-ssh/</link>
-      <pubDate>Fri, 13 Dec 2024 22:37:00 +0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/monitoring/zabbix-host-ssh/</guid>
-      <description>&lt;h2 id=&#34;background&#34;&gt;Background&lt;/h2&gt;
-&lt;p&gt;Have you ever stumble upon a situation where you need to configure Zabbix host to be monitored but they are not on the same network?&lt;/p&gt;
-&lt;p&gt;Setting up a VPN network would be one of the most suggested approach. But let&amp;rsquo;s says it isn&amp;rsquo;t an option for you, or you don&amp;rsquo;t want to do it that way for any reason.&lt;/p&gt;
-&lt;p&gt;One way to solve this problem is to setup SSH connection between the server and the monitored hosts, and then forward the Zabbix agent port (10050 by default) of the monitored host to a port on the server. This would work if your Zabbix server is accessible by its public IP and able to expose its SSH port. Refer to &lt;a href=&#34;http://localhost:1313/posts/solution/monitoring/zabbix-setup-script-noble-arm64/&#34;&gt;this post&lt;/a&gt; on how to setup Zabbix server on a machine with ARM64/AArch64 processor and Ubuntu Noble operating system.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Zabbix setup script for Ubuntu Noble ARM64/AArch64</title>
-      <link>http://localhost:1313/posts/monitoring/zabbix-setup-script-noble-arm64/</link>
-      <pubDate>Wed, 11 Dec 2024 16:37:00 +0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/monitoring/zabbix-setup-script-noble-arm64/</guid>
-      <description>&lt;p&gt;From &lt;a href=&#34;https://en.wikipedia.org/wiki/Zabbix&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wikipedia&lt;/a&gt;:&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Zabbix is an open-source software tool to monitor IT infrastructure such as networks, servers, virtual machines, and cloud services.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;This script automate the installation of Zabbix Server, Frontend and Agent along with its dependencies. The script was tested on an LXD container using the Ubuntu 24.04.1 image, running in a VM with the &lt;code&gt;VM.Standard.A1.Flex&lt;/code&gt; shape on an Oracle Cloud Infrastructure compute instance. I believe it should work on any machine having the same OS and processor.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>VNC on WSL2</title>
-      <link>http://localhost:1313/posts/os/ubuntu/vncserver_wsl2/</link>
-      <pubDate>Tue, 10 Dec 2024 22:55:00 +0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/os/ubuntu/vncserver_wsl2/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Sorry for the tiger eye staring at you. I find it funny so I choose to keep it that way&lt;/em&gt; 🤣&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Windows Subsystem for Linux (WSL) lets developers run a GNU/Linux environment &amp;ndash; including most command-line tools, utilities, and applications &amp;ndash; directly on Windows, unmodified, without the overhead of a traditional virtual machine or dual-boot setup.&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;In my opinion, WSL is just a pre-configured Hyper-V VM or maybe a container which integrate well with Windows.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>VNC on headless VM or container</title>
-      <link>http://localhost:1313/posts/os/ubuntu/vncserver_headless/</link>
-      <pubDate>Mon, 09 Dec 2024 00:29:00 +0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/os/ubuntu/vncserver_headless/</guid>
-      <description>&lt;p&gt;&lt;em&gt;Sorry for the tiger eye staring at you. I find it funny so I choose to keep it that way&lt;/em&gt; 🤣&lt;/p&gt;
-&lt;p&gt;Headless VM or container didn&amp;rsquo;t have any display device attached, so when you want to run a graphical application or a desktop environment, you will have to setup a virtual display. One way to do it is running a VNC server.&lt;/p&gt;
-&lt;p&gt;VNC stands for &lt;strong&gt;V&lt;/strong&gt;irtual &lt;strong&gt;N&lt;/strong&gt;etwork &lt;strong&gt;C&lt;/strong&gt;omputing,  a graphical desktop-sharing system that uses the Remote Frame Buffer protocol (RFB) to remotely control another computer. It transmits the keyboard and mouse input from one computer to another, relaying the graphical-screen updates, over a network. Read more &lt;a href=&#34;https://en.wikipedia.org/wiki/VNC&#34; title=&#34;Virtual Network Computing&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Xfce4 &#43; Papirus icon &#43; Dracula theme = 🖤</title>
-      <link>http://localhost:1313/posts/os/ubuntu/xfce4-papirus-dracula/</link>
-      <pubDate>Sun, 08 Dec 2024 22:24:00 +0700</pubDate>
-      
-      <guid>http://localhost:1313/posts/os/ubuntu/xfce4-papirus-dracula/</guid>
-      <description>&lt;p&gt;I love tinkering with desktop environment in Ubuntu. I installed LXD on my Oracle Cloud Infrastructure A1 instance just to play around with all the available desktop environment. But none of them beat the combination of xfce4, Papirus icon theme and Dracula theme. It is lightweight and pleasant to look at.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/posts/tvnviewer_I1l5tQfGOa.png&#34; alt=&#34;Preview&#34; title=&#34;preview&#34;&gt;&lt;/p&gt;
-&lt;h2 id=&#34;setting-up&#34;&gt;Setting up&lt;/h2&gt;
-&lt;p&gt;Wanna steal the look? here&amp;rsquo;s how to configure it on a freshly installed Ubuntu 24.04.1 LTS.&lt;/p&gt;</description>
-    </item>
-    
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Moh. Sarip Hidayat, S.Tr.Kom</title><link>https://musahi0128.github.io/posts/</link><description>Recent content in Posts on Moh. Sarip Hidayat, S.Tr.Kom</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 05 Jan 2025 13:17:00 +0700</lastBuildDate><atom:link href="https://musahi0128.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Provision Azure's free Linux VM using Terraform</title><link>https://musahi0128.github.io/posts/cloud_infrastructure/terraform-azure-linux-vm/</link><pubDate>Sun, 05 Jan 2025 13:17:00 +0700</pubDate><guid>https://musahi0128.github.io/posts/cloud_infrastructure/terraform-azure-linux-vm/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>My &lt;a href="../terraform-azure-windows-vm/">previous post&lt;/a> described about how to provision a free Windows VM in Azure with Terraform and resources that conform to the &lt;code>Free services for 12 months&lt;/code> offer. On this post, I would like to show how to do the same for a Linux VM.&lt;/p>
+&lt;h2 id="the-code">The code&lt;/h2>
+&lt;p>The following code reuses much of the code from the previous post, highlighting how reusability in Terraform can simplify and streamline the management of your cloud infrastructure.&lt;/p></description></item><item><title>Provision Azure's free Windows VM using Terraform</title><link>https://musahi0128.github.io/posts/cloud_infrastructure/terraform-azure-windows-vm/</link><pubDate>Tue, 31 Dec 2024 16:34:00 +0700</pubDate><guid>https://musahi0128.github.io/posts/cloud_infrastructure/terraform-azure-windows-vm/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>My &lt;a href="../azure-free-vm/">previous post&lt;/a> described about how to provision a free VM in Azure with the &lt;code>Free services for 12 months&lt;/code> offer and details you need to take note to make sure the resource isn&amp;rsquo;t getting additional charge.&lt;/p>
+&lt;p>On this post, I would like to show how to do the same using Terraform, specifically provision a Windows VM. Linux VM will be discussed on the &lt;a href="../terraform-azure-linux-vm/">next post&lt;/a>.&lt;/p>
+&lt;blockquote>
+&lt;p>HashiCorp Terraform is an infrastructure as code tool that lets you define both cloud and on-prem resources in human-readable configuration files that you can version, reuse, and share. You can then use a consistent workflow to provision and manage all of your infrastructure throughout its lifecycle. Terraform can manage low-level components like compute, storage, and networking resources, as well as high-level components like DNS entries and SaaS features. &lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p></description></item><item><title>Azure Free Virtual Machine</title><link>https://musahi0128.github.io/posts/cloud_infrastructure/azure-free-vm/</link><pubDate>Mon, 30 Dec 2024 09:32:00 +0700</pubDate><guid>https://musahi0128.github.io/posts/cloud_infrastructure/azure-free-vm/</guid><description>&lt;h2 id="summary">Summary&lt;/h2>
+&lt;p>Azure offer &lt;code>Free services for 12 months&lt;/code> for new customer which you can check by following steps:&lt;/p>
+&lt;ol>
+&lt;li>Go to &lt;a href="https://portal.azure.com/#view/Microsoft_Azure_Billing/SubscriptionsBladeV2" target="_blank" rel="noopener">Subscriptions&lt;/a>.&lt;/li>
+&lt;li>Click on your &lt;code>Subscription name&lt;/code>.&lt;/li>
+&lt;li>Under &lt;code>Top free services by usage&lt;/code> section, click on &lt;code>View all free services&lt;/code> button.&lt;/li>
+&lt;/ol>
+&lt;p>With the free offer, you can provision following VM without additional charge:&lt;/p>
+&lt;ul>
+&lt;li>&lt;a href="https://portal.azure.com/#create/microsoft.freeaccountvirtualmachine-windows" target="_blank" rel="noopener">Free account&amp;rsquo;s virtual machine (Windows)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://portal.azure.com/#create/microsoft.freeaccountvirtualmachine-linux" target="_blank" rel="noopener">Free account&amp;rsquo;s virtual machine (Linux)&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;p>You might want to provision the VM manually to have more control. For instance, you want to use the latest Ubuntu Noble image instead of Ubuntu Jammie which you will get by provisioning the VM using the URL above. However, using the default option when manually provisioning the VM will likely result in additional charges.&lt;/p></description></item><item><title>Zabbix: monitor host over SSH</title><link>https://musahi0128.github.io/posts/monitoring/zabbix-host-ssh/</link><pubDate>Fri, 13 Dec 2024 22:37:00 +0700</pubDate><guid>https://musahi0128.github.io/posts/monitoring/zabbix-host-ssh/</guid><description>&lt;h2 id="background">Background&lt;/h2>
+&lt;p>Have you ever stumble upon a situation where you need to configure Zabbix host to be monitored but they are not on the same network?&lt;/p>
+&lt;p>Setting up a VPN network would be one of the most suggested approach. But let&amp;rsquo;s says it isn&amp;rsquo;t an option for you, or you don&amp;rsquo;t want to do it that way for any reason.&lt;/p>
+&lt;p>One way to solve this problem is to setup SSH connection between the server and the monitored hosts, and then forward the Zabbix agent port (10050 by default) of the monitored host to a port on the server. This would work if your Zabbix server is accessible by its public IP and able to expose its SSH port. Refer to &lt;a href="https://musahi0128.github.io/posts/solution/monitoring/zabbix-setup-script-noble-arm64/">this post&lt;/a> on how to setup Zabbix server on a machine with ARM64/AArch64 processor and Ubuntu Noble operating system.&lt;/p></description></item><item><title>Zabbix setup script for Ubuntu Noble ARM64/AArch64</title><link>https://musahi0128.github.io/posts/monitoring/zabbix-setup-script-noble-arm64/</link><pubDate>Wed, 11 Dec 2024 16:37:00 +0700</pubDate><guid>https://musahi0128.github.io/posts/monitoring/zabbix-setup-script-noble-arm64/</guid><description>&lt;p>From &lt;a href="https://en.wikipedia.org/wiki/Zabbix" target="_blank" rel="noopener">Wikipedia&lt;/a>:&lt;/p>
+&lt;blockquote>
+&lt;p>Zabbix is an open-source software tool to monitor IT infrastructure such as networks, servers, virtual machines, and cloud services.&lt;/p>
+&lt;/blockquote>
+&lt;p>This script automate the installation of Zabbix Server, Frontend and Agent along with its dependencies. The script was tested on an LXD container using the Ubuntu 24.04.1 image, running in a VM with the &lt;code>VM.Standard.A1.Flex&lt;/code> shape on an Oracle Cloud Infrastructure compute instance. I believe it should work on any machine having the same OS and processor.&lt;/p></description></item><item><title>VNC on WSL2</title><link>https://musahi0128.github.io/posts/os/ubuntu/vncserver_wsl2/</link><pubDate>Tue, 10 Dec 2024 22:55:00 +0700</pubDate><guid>https://musahi0128.github.io/posts/os/ubuntu/vncserver_wsl2/</guid><description>&lt;p>&lt;em>Sorry for the tiger eye staring at you. I find it funny so I choose to keep it that way&lt;/em> 🤣&lt;/p>
+&lt;blockquote>
+&lt;p>Windows Subsystem for Linux (WSL) lets developers run a GNU/Linux environment &amp;ndash; including most command-line tools, utilities, and applications &amp;ndash; directly on Windows, unmodified, without the overhead of a traditional virtual machine or dual-boot setup.&lt;sup id="fnref:1">&lt;a href="#fn:1" class="footnote-ref" role="doc-noteref">1&lt;/a>&lt;/sup>&lt;/p>
+&lt;/blockquote>
+&lt;p>In my opinion, WSL is just a pre-configured Hyper-V VM or maybe a container which integrate well with Windows.&lt;/p></description></item><item><title>VNC on headless VM or container</title><link>https://musahi0128.github.io/posts/os/ubuntu/vncserver_headless/</link><pubDate>Mon, 09 Dec 2024 00:29:00 +0700</pubDate><guid>https://musahi0128.github.io/posts/os/ubuntu/vncserver_headless/</guid><description>&lt;p>&lt;em>Sorry for the tiger eye staring at you. I find it funny so I choose to keep it that way&lt;/em> 🤣&lt;/p>
+&lt;p>Headless VM or container didn&amp;rsquo;t have any display device attached, so when you want to run a graphical application or a desktop environment, you will have to setup a virtual display. One way to do it is running a VNC server.&lt;/p>
+&lt;p>VNC stands for &lt;strong>V&lt;/strong>irtual &lt;strong>N&lt;/strong>etwork &lt;strong>C&lt;/strong>omputing, a graphical desktop-sharing system that uses the Remote Frame Buffer protocol (RFB) to remotely control another computer. It transmits the keyboard and mouse input from one computer to another, relaying the graphical-screen updates, over a network. Read more &lt;a href="https://en.wikipedia.org/wiki/VNC" title="Virtual Network Computing" target="_blank" rel="noopener">here&lt;/a>.&lt;/p></description></item><item><title>Xfce4 + Papirus icon + Dracula theme = 🖤</title><link>https://musahi0128.github.io/posts/os/ubuntu/xfce4-papirus-dracula/</link><pubDate>Sun, 08 Dec 2024 22:24:00 +0700</pubDate><guid>https://musahi0128.github.io/posts/os/ubuntu/xfce4-papirus-dracula/</guid><description>&lt;p>I love tinkering with desktop environment in Ubuntu. I installed LXD on my Oracle Cloud Infrastructure A1 instance just to play around with all the available desktop environment. But none of them beat the combination of xfce4, Papirus icon theme and Dracula theme. It is lightweight and pleasant to look at.&lt;/p>
+&lt;p>&lt;img src="https://musahi0128.github.io/images/posts/tvnviewer_I1l5tQfGOa.png" alt="Preview" title="preview">&lt;/p>
+&lt;h2 id="setting-up">Setting up&lt;/h2>
+&lt;p>Wanna steal the look? here&amp;rsquo;s how to configure it on a freshly installed Ubuntu 24.04.1 LTS.&lt;/p></description></item></channel></rss>
